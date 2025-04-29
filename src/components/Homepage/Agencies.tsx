@@ -59,7 +59,7 @@ function Agencies() {
           (tab, i) => (
             <Link
               href="#"
-              key={tab}
+              key={i}
               className="text-[#808080] text-xs md:text-sm hover:text-[#121212] uppercase"
             >
               {tab}

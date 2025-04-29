@@ -39,11 +39,8 @@ function About() {
           </p>
           <ul className="space-y-3 max-w-xs">
             {points.map((point, index) => (
-              <SlideInFromBottom>
-                <li
-                  key={index}
-                  className="flex flex-col items-center text-white text-sm md:text-base text-center"
-                >
+              <SlideInFromBottom key={index}>
+                <li className="flex flex-col items-center text-white text-sm md:text-base text-center">
                   <img src="/checkmark-badge.svg" alt="checkmark" />
                   <h5 className="text-white font-medium text-sm md:text-base">
                     {point.title}

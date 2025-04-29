@@ -40,7 +40,7 @@ export default function Hero() {
             {["About Us", "Creators", "Brands", "Agencies"].map((tab, i) => (
               <Link
                 href={`#${tab.toLowerCase().replace(" ", "-")}`}
-                key={tab}
+                key={i}
                 className="text-[#BFBFBF] font-medium text-sm md:text-base lg:text-lg hover:text-[#121212]"
               >
                 {tab}
