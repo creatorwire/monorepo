@@ -20,13 +20,13 @@ function BasicInfo({
   };
 
   return (
-    <>
+    <div className="min-h-[60vh]">
       <h5 className="text-[#121212] my-3 font-medium md:text-lg lg:text-lg">
         Please enter your details below
       </h5>
       <form className="flex flex-col gap-3 w-full">
         <div className="space-y-1">
-          <h2 className="text-[#344054] text-sm">Brand Name*</h2>
+          <h2 className="text-[#344054] text-sm font-medium">Brand Name*</h2>
           <input
             placeholder="Brand Name"
             name="brandName"
@@ -36,7 +36,7 @@ function BasicInfo({
           />
         </div>
         <div className="space-y-1">
-          <h2 className="text-[#344054] text-sm">Contact Name*</h2>
+          <h2 className="text-[#344054] text-sm font-medium">Contact Name*</h2>
           <input
             placeholder="Full Name"
             name="contactName"
@@ -46,7 +46,7 @@ function BasicInfo({
           />
         </div>
         <div className="space-y-1">
-          <h2 className="text-[#344054] text-sm">Email Address*</h2>
+          <h2 className="text-[#344054] text-sm font-medium">Email Address*</h2>
           <input
             placeholder="Email Address"
             name="email"
@@ -57,11 +57,11 @@ function BasicInfo({
           />
         </div>
         <div className="space-y-1">
-          <h2 className="text-[#344054] text-sm">Phone Number</h2>
+          <h2 className="text-[#344054] text-sm font-medium">Phone Number</h2>
           <PhoneInput formDetails={formData} setFormDetails={setFormData} />
         </div>
         <div className="space-y-1">
-          <h2 className="text-[#344054] text-sm">
+          <h2 className="text-[#344054] text-sm font-medium">
             Approximate number of creators managed by your Agency
           </h2>
           <input
@@ -73,7 +73,7 @@ function BasicInfo({
           />
         </div>
       </form>
-    </>
+    </div>
   );
 }
 

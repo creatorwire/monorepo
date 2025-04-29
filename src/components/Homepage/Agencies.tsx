@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 function Agencies() {
@@ -9,6 +12,8 @@ function Agencies() {
     "Track deliverables, approvals and payments in one dashboard  –  full visibility",
     "Automate creator payouts and eliminate cashflow strain and manual admin",
   ];
+  const router = useRouter();
+
   return (
     <div className="max-w-screen-2xl mx-auto w-full p-4">
       <div className="max-w-7xl w-full mx-auto flex flex-col-reverse md:flex-row items-center gap-12 my-12 md:my-24">
@@ -37,7 +42,10 @@ function Agencies() {
             ))}
           </div>
 
-          <button className="bg-custom-gradient text-white text-sm md:text-base py-3 px-8 rounded-full shadow-demoShadow transition mt-12">
+          <button
+            onClick={() => router.push("/agency-waitlist")}
+            className="bg-custom-gradient text-white text-sm md:text-base py-3 px-8 rounded-full shadow-demoShadow transition mt-12"
+          >
             Sign up as an Agency
           </button>
         </div>

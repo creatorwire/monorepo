@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 function Brands() {
   const points = [
@@ -20,6 +23,8 @@ function Brands() {
       caption: "stay compliant and efficient",
     },
   ];
+  const router = useRouter();
+
   return (
     <div className="bg-[#1C1C1C] py-4 md:py-12 px-4">
       <div className="max-w-screen-2xl mx-auto flex flex-col gap-4 w-full items-center">
@@ -81,7 +86,10 @@ function Brands() {
             </div>
           ))}
         </div>
-        <button className="bg-custom-gradient text-white text-sm md:text-base py-3 px-8 w-fit rounded-full shadow-demoShadow transition mt-12">
+        <button
+          onClick={() => router.push("/brand-waitlist")}
+          className="bg-custom-gradient text-white text-sm md:text-base py-3 px-8 w-fit rounded-full shadow-demoShadow transition mt-12"
+        >
           Sign up as a Brand
         </button>
       </div>

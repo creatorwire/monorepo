@@ -1,7 +1,12 @@
+"use client";
+
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 function Creators() {
+  const router = useRouter();
+
   return (
     <div className="bg-[#1C1C1C]">
       <Image
@@ -48,7 +53,10 @@ function Creators() {
               </p>
             </div>
           </div>
-          <button className="bg-custom-gradient text-white text-sm md:text-base py-3 px-8 w-fit rounded-full shadow-demoShadow transition mt-4">
+          <button
+            onClick={() => router.push("/creator-waitlist")}
+            className="bg-custom-gradient text-white text-sm md:text-base py-3 px-8 w-fit rounded-full shadow-demoShadow transition mt-4"
+          >
             Sign up as a Creator
           </button>
         </div>

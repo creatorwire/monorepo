@@ -30,6 +30,24 @@ function Waitlist() {
     "Independent Earnings",
   ];
 
+  const [finalFormData, setFinalFormData] = useState<{
+    firstName: string;
+    lastName: string;
+    email: string;
+    creatorType: string[];
+    socialMediaAccount: SocialAccount[];
+    productInterest: string[];
+    income: string;
+  }>({
+    firstName: "",
+    lastName: "",
+    email: "",
+    creatorType: [],
+    socialMediaAccount: [],
+    productInterest: [],
+    income: "",
+  });
+
   const [formData, setFormData] = useState<FormData>({
     firstName: "",
     lastName: "",
@@ -51,12 +69,33 @@ function Waitlist() {
     }
     const { otherCreatorText, ...rest } = formData;
     const payload = { ...rest, creatorTypes: filteredTypes };
-    console.log("Payload:", payload);
+    setFinalFormData({
+      ...finalFormData,
+      firstName: payload.firstName,
+      lastName: payload.lastName,
+      email: payload.email,
+      creatorType: payload.creatorTypes,
+      socialMediaAccount: payload.socialAccounts,
+    });
     setCurrentStep(1);
   };
   const handleProductNext = () => {
-    console.log("Product Interest:", productInterest);
+    setFinalFormData({
+      ...finalFormData,
+      productInterest: productInterest,
+    });
     setCurrentStep(2);
+  };
+
+  const handleSubmit = () => {
+    const payload = {
+      ...finalFormData,
+      income: selectedEarning,
+    };
+    setFinalFormData(payload);
+    console.log("Submitting payload:", payload);
+
+    setShowSuccess(true);
   };
 
   const router = useRouter();
@@ -84,7 +123,7 @@ function Waitlist() {
           }}
         />
 
-        <div className="absolute inset-x-0 bottom-0 pb-16 px-12 text-white ">
+        <div className="absolute inset-x-0 bottom-0 pb-16 px-12 text-white">
           <h3 className="text-xl md:text-2xl font-medium text-white max-w-xl uppercase">
             Focus on YOUR WORK, We’ll handle the admin and GET YOU PAID ON TIME
           </h3>
@@ -96,14 +135,14 @@ function Waitlist() {
       </div>
 
       {showSuccess ? (
-        <div className="h-screen w-full flex-col flex items-center justify-center p-2 gap-4">
+        <div className="h-screen w-full max-w-xl mx-auto flex-col flex items-center justify-center p-2 md:p-4 gap-4">
           <img src="/logo.svg" alt="" className="w-[165px] py-5" />
-          <div className="flex items-center gap-3 w-full">
+          <div className="flex items-center gap-0.5 md:gap-3 w-full">
             {steps.map((step, index) => (
               <div key={step} className="flex-1 flex flex-col items-center">
                 <div className="flex items-centr justify-between w-full">
                   <span
-                    className={`font-medium text-[10px] md:text-xs ${
+                    className={`font-medium text-[10px] md:text-xs whitespace-nowrap ${
                       index === currentStep ? "text-black" : "text-[#808080]"
                     }`}
                   >
@@ -133,7 +172,6 @@ function Waitlist() {
             Thanks for signing up
           </h2>
           <p className="text-[#808080] text-base md:text-lg lg:text-xl max-w-[400px] text-center">
-            Thanks for signing up <br />
             We’ll be in touch soon regarding how we can support your team.
           </p>
           <button
@@ -211,7 +249,7 @@ function Waitlist() {
           {
             {
               0: (
-                <span className="w-full max-w-xl mx-auto flex justify-end py-4">
+                <span className="w-full max-w-xl mx-auto flex justify-end p-4">
                   <button
                     onClick={handleBasicNext}
                     className="bg-custom-gradient text-white text-xs md:text-sm py-3 px-16 rounded-full shadow-demoShadow transition"
@@ -221,7 +259,7 @@ function Waitlist() {
                 </span>
               ),
               1: (
-                <div className="flex max-w-xl mx-auto w-full justify-between items-center py-4">
+                <div className="flex max-w-xl mx-auto w-full justify-between items-center p-4">
                   <button
                     onClick={() => setCurrentStep(0)}
                     className="text-[#8E22EA] font-medium text-xs md:text-sm py-3 px-16"
@@ -237,7 +275,7 @@ function Waitlist() {
                 </div>
               ),
               2: (
-                <div className="flex max-w-xl mx-auto w-full justify-between items-center py-4">
+                <div className="flex max-w-xl mx-auto w-full justify-between items-center p-4">
                   <button
                     onClick={() => setCurrentStep(1)}
                     className="text-[#8E22EA] font-medium text-xs md:text-sm py-3 px-16"
@@ -245,7 +283,7 @@ function Waitlist() {
                     Back
                   </button>
                   <button
-                    onClick={() => setShowSuccess(true)}
+                    onClick={handleSubmit}
                     className="bg-custom-gradient text-white text-xs md:text-sm py-3 px-16 rounded-full shadow-demoShadow transition"
                   >
                     Next

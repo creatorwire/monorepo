@@ -84,7 +84,7 @@ function BasicInfo({
       <form className="flex flex-col gap-3 w-full">
         <div className="grid grid-cols-2 gap-3">
           <div className="space-y-1">
-            <h2 className="text-[#344054] text-sm">First Name*</h2>
+            <h2 className="text-[#344054] text-sm font-medium">First Name*</h2>
             <input
               placeholder="First Name"
               name="firstName"
@@ -94,7 +94,7 @@ function BasicInfo({
             />
           </div>
           <div className="space-y-1">
-            <h2 className="text-[#344054] text-sm">Last Name*</h2>
+            <h2 className="text-[#344054] text-sm font-medium">Last Name*</h2>
             <input
               placeholder="Last Name"
               name="lastName"
@@ -105,7 +105,7 @@ function BasicInfo({
           </div>
         </div>
         <div className="space-y-1">
-          <h2 className="text-[#344054] text-sm">Email Address*</h2>
+          <h2 className="text-[#344054] text-sm font-medium">Email Address*</h2>
           <input
             placeholder="Email Address"
             name="email"

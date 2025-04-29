@@ -2,9 +2,9 @@
 import React, { useState, useEffect } from "react";
 
 const productInterestOptions = [
-  "Upfront cash to pay creators for verified work",
-  "Centralised tracking for campaign execution",
-  "Payroll, admin, tax, and reporting tools",
+  "Simplified creator payments (no payroll admin, consolidated invoices)",
+  "Offer creators & agencies flexible payouts (payment fronted by CreatorWire)",
+  "Budget tracking, tax and financial reporting tools",
   "Other (please specify)",
 ];
 
@@ -35,10 +35,8 @@ function ProductInterest({
   const handleCheckboxChange = (type: string) => {
     if (type === "Other (please specify)") {
       if (!isOtherSelected) {
-        // Add empty string as placeholder
         setProductInterest((prev) => [...prev, ""]);
       } else {
-        // Remove all non-option entries
         setProductInterest((prev) =>
           prev.filter((item) => productInterestOptions.includes(item))
         );

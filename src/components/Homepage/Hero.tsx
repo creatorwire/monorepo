@@ -1,7 +1,12 @@
+"use client";
+
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 export default function Hero() {
+  const router = useRouter();
+
   return (
     <div className="p-4 bg-white h-screen">
       <div className="relative bg-gray-400 bg-opacity-20 backdrop-blur-lg flex max-h-[98vh] h-full items-center justify-center rounded-2xl overflow-hidden">
@@ -27,7 +32,10 @@ export default function Hero() {
                 tracking for brands and agencies.
               </p>
             </div>
-            <button className="bg-custom-gradient text-white text-sm md:text-base py-3 px-8 w-fit rounded-full shadow-demoShadow transition">
+            <button
+              onClick={() => router.push("/creator-waitlist")}
+              className="bg-custom-gradient text-white text-sm md:text-base py-3 px-8 w-fit rounded-full shadow-demoShadow transition"
+            >
               Get Started
             </button>
           </div>

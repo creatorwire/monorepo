@@ -68,7 +68,7 @@ function BasicInfo({
       </h5>
       <form className="flex flex-col gap-3 w-full">
         <div className="space-y-1">
-          <h2 className="text-[#344054] text-sm">Agency Name*</h2>
+          <h2 className="text-[#344054] text-sm font-medium">Agency Name*</h2>
           <input
             placeholder="Agency Name"
             name="agencyName"
@@ -114,7 +114,9 @@ function BasicInfo({
           </div>
         </div>
         <div className="space-y-1">
-          <h2 className="text-[#344054] text-sm">Agency Contact Name*</h2>
+          <h2 className="text-[#344054] text-sm font-medium">
+            Agency Contact Name*
+          </h2>
           <input
             placeholder="Full Name"
             name="agencyContactName"
@@ -124,7 +126,7 @@ function BasicInfo({
           />
         </div>
         <div className="space-y-1">
-          <h2 className="text-[#344054] text-sm">Email Address*</h2>
+          <h2 className="text-[#344054] text-sm font-medium">Email Address*</h2>
           <input
             placeholder="Email Address"
             name="email"
@@ -135,11 +137,11 @@ function BasicInfo({
           />
         </div>
         <div className="space-y-1">
-          <h2 className="text-[#344054] text-sm">Phone Number</h2>
+          <h2 className="text-[#344054] text-sm font-medium">Phone Number</h2>
           <PhoneInput formDetails={formData} setFormDetails={setFormData} />
         </div>
         <div className="space-y-1">
-          <h2 className="text-[#344054] text-sm">
+          <h2 className="text-[#344054] text-sm font-medium">
             Approximate number of creators managed by your Agency
           </h2>
           <input
