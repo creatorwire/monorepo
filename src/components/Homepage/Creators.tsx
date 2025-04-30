@@ -8,18 +8,22 @@ function Creators() {
   const router = useRouter();
 
   return (
-    <div className="bg-[#1C1C1C]">
+    <div className="relative h-screen">
       <Image
         src="/happy-group.jpg"
         alt="happy group"
-        width={500}
-        height={500}
-        className="h-[670px] object-cover w-full object-top"
+        fill
+        className="object-cover object-center h-full"
+        priority
       />
       <div
-        id="creators"
-        className="w-full bg-gradient-to-b from-[#1C1C1C]/60 via-[#1C1C1C] to-[#1C1C1C] bg-opacity-90 backdrop-blur-3xl -mt-[70px]"
-      >
+        className="absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(to bottom, transparent 40%, #1C1C1C90 50%, #1C1C1C 70%)",
+        }}
+      />
+      <div id="creators" className="absolute inset-x-0 bottom-0 text-white">
         <div className="max-w-screen-2xl mx-auto flex flex-col gap-4 py-12 px-4 md:px-12 lg:px-24">
           <h5 className="bg-[#8E22EA] py-0.5 px-2.5 uppercase rounded-2xl text-xs md:text-sm font-semibold text-[#FBF7FF] w-fit">
             For creators

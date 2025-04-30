@@ -10,17 +10,25 @@ export default function Hero() {
   return (
     <div className="p-4 bg-white h-screen">
       <div className="relative bg-gray-400 bg-opacity-20 backdrop-blur-lg flex max-h-[98vh] h-full items-center justify-center rounded-2xl overflow-hidden">
-        {/* Animated blobs - moved outside content container */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-10 left-0 w-72 h-72 bg-purple-400 rounded-full filter blur-3xl opacity-70 animate-blob"></div>
-          <div className="absolute top-1/2 right-0 w-80 h-80 bg-pink-400 rounded-full filter blur-3xl opacity-60 animate-blob2"></div>
-          <div className="absolute bottom-20 left-1/2 w-64 h-64 bg-blue-300 rounded-full filter blur-3xl opacity-50 animate-blob3"></div>
+          <div className="absolute top-10 left-0 w-[40vw] aspect-square bg-purple-400 rounded-full filter blur-3xl opacity-70 animate-blob"></div>
+          <div className="absolute top-1/2 right-0 w-[45vw] aspect-square bg-pink-400 rounded-full filter blur-3xl opacity-60 animate-blob2"></div>
+          <div className="absolute bottom-20 left-1/2 w-[35vw] aspect-square bg-blue-300 rounded-full filter blur-3xl opacity-50 animate-blob3"></div>
         </div>
 
         <div className="max-w-screen-2xl mx-auto h-full w-full flex flex-col items-center justify-center relative">
           {/* Content */}
           <div className="relative z-10 text-center px-4 max-w-2xl w-full flex flex-col justify-between items-center max-h-[550px] md:max-h-[700px] h-full py-12 md:mb-12">
-            <img src="/logo.svg" alt="creatorwire" className="mx-auto" />
+            <img
+              src="/logo.svg"
+              alt="creatorwire"
+              className="mx-auto hidden md:block"
+            />
+            <img
+              src="/small-logo.png"
+              alt="creatorwire"
+              className="mx-auto md:hidden w-[10rem]"
+            />
             <div className="w-full text-center">
               <h1 className="text-[#121212] font-poppins font-extrabold text-3xl md:text-4xl lg:text-6xl uppercase tracking-tighter">
                 Getting creators paid early or on time, every time — with zero

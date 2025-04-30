@@ -19,7 +19,7 @@ const points = [
 function About() {
   return (
     <div className="px-2 pb-8 bg-white">
-      <div className="bg-[#1C1C1C] rounded-2xl max-w-screen-2xl w-full mx-auto relative flex flex-col items-center justify-center min-h-[750px]">
+      <div className="bg-[#1C1C1C] rounded-2xl mx-auto relative flex flex-col items-center justify-center min-h-[750px]">
         <div
           id="about-us"
           className="flex flex-col gap-4 items-center max-w-3xl z-20 px-4"

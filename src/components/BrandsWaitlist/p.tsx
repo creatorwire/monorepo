@@ -6,6 +6,8 @@ import Link from "next/link";
 import BasicInfo from "./BasicInfo";
 import ProductInterest from "./ProductInterest";
 import { useRouter } from "next/navigation";
+import axios from "axios";
+import toast from "react-hot-toast";
 
 export interface SocialAccount {
   platform: string;
@@ -36,17 +38,31 @@ function Waitlist() {
   const [productInterest, setProductInterest] = useState<string[]>([]);
   const [showSuccess, setShowSuccess] = useState(false);
 
-  const handleSubmit = () => {
-    const { countryCode, phoneNumber, ...rest } = formData;
+  const handleSubmit = async () => {
+    try {
+      const { countryCode, phoneNumber, ...rest } = formData;
 
-    const payload = {
-      ...rest,
-      phoneNumber: `${countryCode}${phoneNumber}`,
-      productInterest,
-    };
+      const payload = {
+        ...rest,
+        phoneNumber: `${countryCode}${phoneNumber}`,
+        productInterest,
+      };
 
-    console.log("Payload:", payload);
-    setShowSuccess(true);
+      const res = await axios.post(
+        `${process.env.NEXT_PUBLIC_BASE_URL}/api/waitlist`,
+        payload
+      );
+
+      if (res.status === 200) {
+        toast.success("Successfully signed up for the waitlist");
+        setShowSuccess(true);
+      } else {
+        toast.error("Something went wrong. Please try again later");
+      }
+    } catch (error) {
+      console.error("Error submitting waitlist form:", error);
+      toast.error("An error occurred. Please try again later.");
+    }
   };
   const router = useRouter();
 
@@ -73,7 +89,7 @@ function Waitlist() {
           }}
         />
 
-        <div className="absolute inset-x-0 bottom-0 pb-16 px-12 text-white ">
+        <div className="absolute inset-x-0 bottom-0 pb-16 px-12 text-white">
           <h3 className="text-xl md:text-2xl font-medium text-white max-w-lg uppercase">
             Simplify how you manage creator PROJECTS and payments – track
             everything in one place
@@ -89,7 +105,16 @@ function Waitlist() {
 
       {showSuccess ? (
         <div className="h-screen w-full max-w-xl mx-auto flex-col flex items-center justify-center p-2 md:p-4 gap-4">
-          <img src="/logo.svg" alt="" className="w-[165px] py-5" />
+          <img
+            src="/logo.svg"
+            alt=""
+            className="w-[165px] py-5 hidden md:block"
+          />
+          <img
+            src="/small-logo.png"
+            alt="creatorwire"
+            className="md:hidden w-[10rem]"
+          />
           <div className="flex items-center gap-0.5 md:gap-3 w-full">
             {steps.map((step, index) => (
               <div key={step} className="flex-1 flex flex-col items-center">
@@ -137,7 +162,16 @@ function Waitlist() {
       ) : (
         <div className="w-full h-screen overflow-auto scrollbar-hide">
           <div className="max-w-xl mx-auto flex">
-            <img src="/logo.svg" alt="" className="w-[165px] py-5" />
+            <img
+              src="/logo.svg"
+              alt=""
+              className="w-[165px] py-5 hidden md:block"
+            />
+            <img
+              src="/small-logo.png"
+              alt="creatorwire"
+              className="md:hidden w-[10rem]"
+            />
           </div>
           <hr />
           <div className="max-w-xl w-full p-2 md:p-4 mx-auto">

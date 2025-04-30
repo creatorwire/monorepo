@@ -6,6 +6,8 @@ import Link from "next/link";
 import BasicInfo from "./BasicInfo";
 import ProductInterest from "./ProductInterest";
 import { useRouter } from "next/navigation";
+import axios from "axios";
+import toast from "react-hot-toast";
 
 export interface SocialAccount {
   platform: string;
@@ -103,14 +105,27 @@ function Waitlist() {
     setCurrentStep(1);
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     const payload = {
       ...finalFormData,
       productInterest,
     };
 
-    console.log("Payload:", payload);
-    setShowSuccess(true);
+    try {
+      const res = await axios.post(
+        `${process.env.NEXT_PUBLIC_BASE_URL}/api/waitlist`,
+        payload
+      );
+
+      if (res.status === 200) {
+        toast.success("Successfully signed up for the waitlist");
+        setShowSuccess(true);
+      } else {
+        toast.error("Something went wrong. Please try again later");
+      }
+    } catch (error) {
+      toast.error("An error occurred. Please try again later");
+    }
   };
 
   const router = useRouter();
@@ -153,7 +168,16 @@ function Waitlist() {
 
       {showSuccess ? (
         <div className="h-screen w-full max-w-xl mx-auto flex-col flex items-center justify-center p-2 md:p-4 gap-4">
-          <img src="/logo.svg" alt="" className="w-[165px] py-5" />
+          <img
+            src="/logo.svg"
+            alt=""
+            className="w-[165px] py-5 hidden md:block"
+          />
+          <img
+            src="/small-logo.png"
+            alt="creatorwire"
+            className="md:hidden w-[10rem]"
+          />
           <div className="flex items-center gap-0.5 md:gap-3 w-full">
             {steps.map((step, index) => (
               <div key={step} className="flex-1 flex flex-col items-center">
@@ -201,7 +225,16 @@ function Waitlist() {
       ) : (
         <div className="w-full max-h-screen overflow-auto scrollbar-hide">
           <div className="max-w-xl mx-auto flex">
-            <img src="/logo.svg" alt="" className="w-[165px] py-5" />
+            <img
+              src="/logo.svg"
+              alt=""
+              className="w-[165px] py-5 hidden md:block"
+            />
+            <img
+              src="/small-logo.png"
+              alt="creatorwire"
+              className="md:hidden w-[10rem]"
+            />
           </div>
           <hr />
           <div className="max-w-xl w-full p-2 md:p-4 mx-auto">
