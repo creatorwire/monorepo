@@ -46,6 +46,7 @@ function Waitlist() {
         ...rest,
         phoneNumber: `${countryCode}${phoneNumber}`,
         productInterest,
+        userType: "Brand",
       };
 
       const res = await axios.post(

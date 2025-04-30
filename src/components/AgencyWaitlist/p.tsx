@@ -40,7 +40,7 @@ function Waitlist() {
     phoneNumber: string;
     numberOfCreators: string;
     paymentMethods: string[];
-    socialMediaAccount: SocialAccount[];
+    socialMediaAccounts: SocialAccount[];
     productInterest: string[];
   }>({
     agencyName: "",
@@ -50,7 +50,7 @@ function Waitlist() {
     phoneNumber: "",
     numberOfCreators: "",
     paymentMethods: [],
-    socialMediaAccount: [],
+    socialMediaAccounts: [{ platform: "", handle: "" }],
     productInterest: [],
   });
 
@@ -99,7 +99,7 @@ function Waitlist() {
       phoneNumber: `${payload.countryCode}${payload.phoneNumber}`,
       numberOfCreators: payload.numberOfCreators,
       paymentMethods: payload.paymentMethods,
-      socialMediaAccount: payload.socialAccounts,
+      socialMediaAccounts: payload.socialAccounts,
       productInterest: [],
     });
     setCurrentStep(1);
@@ -109,6 +109,7 @@ function Waitlist() {
     const payload = {
       ...finalFormData,
       productInterest,
+      userType: "Agency",
     };
 
     try {

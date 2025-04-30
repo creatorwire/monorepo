@@ -37,7 +37,7 @@ function Waitlist() {
     lastName: string;
     email: string;
     creatorType: string[];
-    socialMediaAccount: SocialAccount[];
+    socialMediaAccounts: SocialAccount[];
     productInterest: string[];
     income: string;
   }>({
@@ -45,7 +45,7 @@ function Waitlist() {
     lastName: "",
     email: "",
     creatorType: [],
-    socialMediaAccount: [],
+    socialMediaAccounts: [],
     productInterest: [],
     income: "",
   });
@@ -56,7 +56,7 @@ function Waitlist() {
     email: "",
     creatorTypes: [],
     otherCreatorText: "",
-    socialAccounts: [],
+    socialAccounts: [{ platform: "", handle: "" }],
   });
   const [productInterest, setProductInterest] = useState<string[]>([]);
   const [selectedEarning, setSelectedEarning] = React.useState<string>("");
@@ -77,7 +77,7 @@ function Waitlist() {
       lastName: payload.lastName,
       email: payload.email,
       creatorType: payload.creatorTypes,
-      socialMediaAccount: payload.socialAccounts,
+      socialMediaAccounts: payload.socialAccounts,
     });
     setCurrentStep(1);
   };
@@ -94,6 +94,7 @@ function Waitlist() {
       const payload = {
         ...finalFormData,
         income: selectedEarning,
+        userTyper: "Creator",
       };
       setFinalFormData(payload);
       const res = await axios.post(
