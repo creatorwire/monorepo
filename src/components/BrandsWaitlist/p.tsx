@@ -44,6 +44,7 @@ function Waitlist() {
 
       const payload = {
         ...rest,
+        numberOfCreators: Number(formData.numberOfCreators),
         phoneNumber: `${countryCode}${phoneNumber}`,
         productInterest,
         userType: "Brand",

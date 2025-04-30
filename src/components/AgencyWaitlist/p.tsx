@@ -97,7 +97,7 @@ function Waitlist() {
       agencyContactName: payload.agencyContactName,
       email: payload.email,
       phoneNumber: `${payload.countryCode}${payload.phoneNumber}`,
-      numberOfCreators: payload.numberOfCreators,
+      numberOfCreators: Number(payload.numberOfCreators),
       paymentMethods: payload.paymentMethods,
       socialMediaAccounts: payload.socialAccounts,
       productInterest: [],
