@@ -180,6 +180,9 @@ function BasicInfo({
                       }
                       className="flex-1 p-2 border border-gray-300 rounded-[8px] outline-none w-full"
                     >
+                      <option disabled value="">
+                        Select Platform
+                      </option>
                       {availablePlatforms.map((p) => (
                         <option key={p} value={p}>
                           {p}
