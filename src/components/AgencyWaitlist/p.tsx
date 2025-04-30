@@ -22,7 +22,7 @@ export interface FormData {
   email: string;
   countryCode: string;
   phoneNumber: string;
-  numberOfCreators: string;
+  numberOfCreators: number;
   paymentMethods: string[];
   otherPaymentText: string;
   socialAccounts: SocialAccount[];
@@ -38,7 +38,7 @@ function Waitlist() {
     agencyContactName: string;
     email: string;
     phoneNumber: string;
-    numberOfCreators: string;
+    numberOfCreators: number;
     paymentMethods: string[];
     socialMediaAccounts: SocialAccount[];
     productInterest: string[];
@@ -48,7 +48,7 @@ function Waitlist() {
     agencyContactName: "",
     email: "",
     phoneNumber: "",
-    numberOfCreators: "",
+    numberOfCreators: 0,
     paymentMethods: [],
     socialMediaAccounts: [{ platform: "", handle: "" }],
     productInterest: [],
@@ -62,7 +62,7 @@ function Waitlist() {
     email: "",
     countryCode: "",
     phoneNumber: "",
-    numberOfCreators: "",
+    numberOfCreators: 0,
     paymentMethods: [],
     otherPaymentText: "",
     socialAccounts: [],

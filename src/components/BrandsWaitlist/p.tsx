@@ -20,7 +20,7 @@ export interface FormData {
   email: string;
   countryCode: string;
   phoneNumber: string;
-  numberOfCreators: string;
+  numberOfCreators: number;
 }
 
 function Waitlist() {
@@ -33,7 +33,7 @@ function Waitlist() {
     email: "",
     countryCode: "+1",
     phoneNumber: "",
-    numberOfCreators: "",
+    numberOfCreators: 0,
   });
   const [productInterest, setProductInterest] = useState<string[]>([]);
   const [showSuccess, setShowSuccess] = useState(false);

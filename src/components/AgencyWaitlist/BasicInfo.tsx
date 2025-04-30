@@ -146,8 +146,11 @@ function BasicInfo({
           </h2>
           <input
             placeholder="Number"
+            type="number"
             name="numberOfCreators"
-            value={formData.numberOfCreators}
+            value={
+              formData.numberOfCreators > 0 ? formData.numberOfCreators : ""
+            }
             onChange={handleChange}
             className="p-2 border rounded-[8px] border-[#D0D5DD] bg-white focus-within:ring-0 focus-within:border-[#D0D5DD] focus-within:bg-transparent outline-none w-full"
           />
