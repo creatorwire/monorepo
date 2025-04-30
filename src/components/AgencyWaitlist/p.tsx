@@ -34,22 +34,22 @@ function Waitlist() {
 
   const [finalFormData, setFinalFormData] = useState<{
     agencyName: string;
-    agencyTypes: string[];
-    agencyContactName: string;
+    agencyType: string[];
+    contactName: string;
     email: string;
     phoneNumber: string;
     numberOfCreators: number;
-    paymentMethods: string[];
+    howTheyPayCreators: string[];
     socialMediaAccounts: SocialAccount[];
     productInterest: string[];
   }>({
     agencyName: "",
-    agencyTypes: [],
-    agencyContactName: "",
+    agencyType: [],
+    contactName: "",
     email: "",
     phoneNumber: "",
     numberOfCreators: 0,
-    paymentMethods: [],
+    howTheyPayCreators: [],
     socialMediaAccounts: [{ platform: "", handle: "" }],
     productInterest: [],
   });
@@ -93,12 +93,12 @@ function Waitlist() {
     };
     setFinalFormData({
       agencyName: payload.agencyName,
-      agencyTypes: payload.agencyTypes,
-      agencyContactName: payload.agencyContactName,
+      agencyType: payload.agencyTypes,
+      contactName: payload.agencyContactName,
       email: payload.email,
       phoneNumber: `${payload.countryCode}${payload.phoneNumber}`,
       numberOfCreators: Number(payload.numberOfCreators),
-      paymentMethods: payload.paymentMethods,
+      howTheyPayCreators: payload.paymentMethods,
       socialMediaAccounts: payload.socialAccounts,
       productInterest: [],
     });
