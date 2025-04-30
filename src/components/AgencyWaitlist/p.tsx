@@ -118,7 +118,7 @@ function Waitlist() {
         payload
       );
 
-      if (res.status === 200) {
+      if (res.status === 201) {
         toast.success("Successfully signed up for the waitlist");
         setShowSuccess(true);
       } else {
