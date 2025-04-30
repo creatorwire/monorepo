@@ -94,7 +94,7 @@ function Waitlist() {
       const payload = {
         ...finalFormData,
         income: selectedEarning,
-        userTyper: "Creator",
+        userType: "Creator",
       };
       setFinalFormData(payload);
       const res = await axios.post(
