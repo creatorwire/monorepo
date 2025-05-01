@@ -18,7 +18,7 @@ function Agencies() {
     <div className="max-w-screen-2xl mx-auto w-full p-4 relative">
       <h5
         id="agencies"
-        className="bg-[#8E22EA] py-0.5 px-2.5 uppercase rounded-2xl text-xs md:text-sm font-semibold text-[#FBF7FF] w-fit absolute md:block top-6"
+        className="bg-[#8E22EA] py-0.5 px-2.5 uppercase rounded-2xl text-xs md:text-sm font-semibold text-[#FBF7FF] w-fit absolute md:hidden top-6"
       >
         For Agencies
       </h5>
