@@ -8,7 +8,7 @@ export default function Hero() {
   const router = useRouter();
 
   return (
-    <div className="p-4 bg-white h-screen">
+    <div className="px-2 md:px-4 py-2 md:py-4 bg-white h-screen">
       <div className="relative bg-gray-400 bg-opacity-20 backdrop-blur-lg flex max-h-[98vh] h-full items-center justify-center rounded-2xl overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-10 left-0 w-[40vw] aspect-square bg-purple-400 rounded-full filter blur-3xl opacity-70 animate-blob"></div>
@@ -18,7 +18,7 @@ export default function Hero() {
 
         <div className="max-w-screen-2xl mx-auto h-full w-full flex flex-col items-center justify-center relative">
           {/* Content */}
-          <div className="relative z-10 text-center px-4 max-w-2xl w-full flex flex-col justify-between items-center max-h-[550px] md:max-h-[700px] h-full py-12 md:mb-12">
+          <div className="relative z-10 text-center px-4 max-w-2xl w-full flex flex-col justify-between items-center max-h-[600px] md:max-h-[650px] h-full py-12 md:mb-12">
             <img
               src="/logo.svg"
               alt="creatorwire"
@@ -27,7 +27,7 @@ export default function Hero() {
             <img
               src="/small-logo.png"
               alt="creatorwire"
-              className="mx-auto md:hidden w-[10rem]"
+              className="mx-auto md:hidden w-[12rem]"
             />
             <div className="w-full text-center">
               <h1 className="text-[#121212] font-poppins font-extrabold text-3xl md:text-4xl lg:text-6xl uppercase tracking-tighter">
@@ -41,7 +41,7 @@ export default function Hero() {
               </p>
             </div>
             <button
-              onClick={() => router.push("/creator-waitlist")}
+              onClick={() => window.scrollTo(0, window.innerHeight)}
               className="bg-custom-gradient text-white text-sm md:text-base py-3 px-8 w-fit rounded-full shadow-demoShadow transition"
             >
               Get Started
@@ -49,7 +49,7 @@ export default function Hero() {
           </div>
 
           {/* Bottom nav pill */}
-          <div className="absolute bottom-2 md:bottom-5 left-1/2 transform -translate-x-1/2 bg-white rounded-xl shadow-gray-400 shadow-md py-2 px-6 hidden md:flex items-center gap-4">
+          <div className="absolute bottom-2 md:bottom-[5%] left-1/2 transform -translate-x-1/2 bg-white rounded-xl shadow-gray-400 shadow-md py-2 px-6 hidden md:flex items-center justify-between min-w-[35%] gap-4">
             <Link href="/">
               <img src="/logoIcon.svg" alt="" />
             </Link>
@@ -57,7 +57,7 @@ export default function Hero() {
               <Link
                 href={`#${tab.toLowerCase().replace(" ", "-")}`}
                 key={i}
-                className="text-[#BFBFBF] font-medium text-sm md:text-base lg:text-lg hover:text-[#121212]"
+                className="text-[#BFBFBF] font-medium text-sm md:text-base lg:text-lg hover:text-[#121212] whitespace-nowrap"
               >
                 {tab}
               </Link>

@@ -26,8 +26,8 @@ function Brands() {
   const router = useRouter();
 
   return (
-    <div className="bg-[#1C1C1C] py-4 md:py-12 px-4">
-      <div className="max-w-screen-2xl mx-auto flex flex-col gap-4 w-full items-center">
+    <div className="bg-[#1C1C1C] py-12 px-4">
+      <div className="flex flex-col gap-4 w-full items-center">
         <h5
           id="brands"
           className="bg-[#8E22EA] py-0.5 px-2.5 uppercase rounded-2xl text-xs md:text-sm font-semibold text-[#FBF7FF] w-fit"
@@ -43,7 +43,7 @@ function Brands() {
           creators the option to get paid instantly - while you pay on standard
           terms.
         </p>
-        <div className="flex justify-center -space-x-[4rem] w-full my-6">
+        <div className="flex justify-center -space-x-[4rem] md:-space-x-[6rem] w-full my-6">
           <Image
             src="/glowup.svg"
             alt=""
@@ -56,7 +56,7 @@ function Brands() {
             alt=""
             width={0}
             height={0}
-            className="w-[11rem] md:w-full md:h-full hover:scale-105 transition-all duration-300 hover:z-10"
+            className="w-[11rem] md:w-full md:h-full hover:scale-105 transition-all duration-300 hover:z-10 z-10 md:z-1"
           />
           <Image
             src="/campaign.svg"
@@ -75,20 +75,22 @@ function Brands() {
               <img
                 src="/checkmark-badge.svg"
                 alt="checkmark"
-                className="mt-1"
+                className="min-w-6 mt-1"
               />
               <div>
                 <h5 className="text-white font-medium text-sm md:text-base">
                   {point.title}
                 </h5>
-                <p className="text-xs md:text-sm text-white">{point.caption}</p>
+                <p className="text-sm md:text-base text-white">
+                  {point.caption}
+                </p>
               </div>
             </div>
           ))}
         </div>
         <button
-          onClick={() => router.push("/brand-waitlist")}
-          className="bg-custom-gradient text-white text-sm md:text-base py-3 px-8 w-fit rounded-full shadow-demoShadow transition mt-12"
+          onClick={() => router.push("/brands-signup-form")}
+          className="bg-custom-gradient text-white text-sm md:text-base py-2 px-4 md:py-3 md:px-8 w-fit rounded-full shadow-demoShadow transition mt-12"
         >
           Sign up as a Brand
         </button>

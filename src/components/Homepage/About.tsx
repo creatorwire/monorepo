@@ -18,7 +18,7 @@ const points = [
 
 function About() {
   return (
-    <div className="px-2 pb-8 bg-white">
+    <div className="px-2 md:px-4 pb-2.5 bg-white">
       <div className="bg-[#1C1C1C] rounded-2xl mx-auto relative flex flex-col items-center justify-center min-h-[750px]">
         <div
           id="about-us"
@@ -54,21 +54,21 @@ function About() {
           </ul>
         </div>
         <SlideInFromBottom
-          className="hidden lg:block absolute left-0 -bottom-1"
+          className="hidden xl:block absolute left-0 -bottom-1"
           delay={0}
         >
           <img src="/ava-brooks.svg" alt="" />
         </SlideInFromBottom>
 
         <SlideInFromBottom
-          className="hidden lg:block absolute right-0 bottom-0"
+          className="hidden xl:block absolute right-0 bottom-0"
           delay={200}
         >
           <img src="/techware.svg" alt="" />
         </SlideInFromBottom>
 
         <SlideInFromBottom
-          className="hidden lg:block absolute right-0 top-[20%]"
+          className="hidden xl:block absolute right-0 top-[20%]"
           delay={400}
         >
           <img src="/bendford.svg" alt="" />

@@ -104,7 +104,7 @@ function BasicInfo({
                 <input
                   type="text"
                   name="otherAgencyText"
-                  placeholder="others"
+                  placeholder="Please describe here"
                   value={formData.otherAgencyText}
                   onChange={handleChange}
                   className="mt-1 p-2 border border-gray-300 rounded-[8px] w-[95%]"
@@ -184,7 +184,7 @@ function BasicInfo({
                 <input
                   type="text"
                   name="otherPaymentText"
-                  placeholder="others"
+                  placeholder="Please describe here"
                   value={formData.otherPaymentText}
                   onChange={handleChange}
                   className="mt-1 p-2 border border-gray-300 rounded-[8px] w-[95%]"

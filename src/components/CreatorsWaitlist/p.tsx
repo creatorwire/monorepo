@@ -173,7 +173,7 @@ function Waitlist() {
                   >
                     {step}
                   </span>
-                  {index <= currentStep && (
+                  {index <= currentStep - 1 && (
                     <Image
                       src={greenCheck}
                       alt="completed"
@@ -187,7 +187,7 @@ function Waitlist() {
                 {/* underline */}
                 <div
                   className={`mt-2 h-[3px] w-full rounded-full ${
-                    index <= currentStep ? "bg-[#16AF38]" : "bg-gray-200"
+                    index <= currentStep - 1 ? "bg-[#16AF38]" : "bg-gray-200"
                   }`}
                 />
               </div>

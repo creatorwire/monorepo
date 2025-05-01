@@ -8,7 +8,7 @@ function Creators() {
   const router = useRouter();
 
   return (
-    <div className="relative h-screen">
+    <div className="relative h-screen mb-3">
       <Image
         src="/happy-group.jpg"
         alt="happy group"
@@ -20,46 +20,50 @@ function Creators() {
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(to bottom, transparent 40%, #1C1C1C90 50%, #1C1C1C 70%)",
+            "linear-gradient(to bottom, transparent 30%, #F5F5F550 40%, #F5F5F5 76%)",
+          // "linear-gradient(to bottom, transparent 40%, #1C1C1C90 50%, #1C1C1C 70%)",
         }}
       />
-      <div id="creators" className="absolute inset-x-0 bottom-0 text-white">
-        <div className="max-w-screen-2xl mx-auto flex flex-col gap-4 py-12 px-4 md:px-12 lg:px-24">
+      <div
+        id="creators"
+        className="absolute inset-x-0 -bottom-6 md:bottom-0 lg:bottom-3 text-black"
+      >
+        <div className="flex flex-col gap-4 md:gap-8 pb-12 px-4 md:px-12 lg:px-24">
           <h5 className="bg-[#8E22EA] py-0.5 px-2.5 uppercase rounded-2xl text-xs md:text-sm font-semibold text-[#FBF7FF] w-fit">
             For creators
           </h5>
-          <h3 className="text-xl md:text-2xl lg:text-3xl text-white max-w-2xl">
+          <h3 className="text-xl md:text-2xl lg:text-3xl">
             Focus on your work. We’ll handle the admin and get you paid on time.
           </h3>
-          <p className="text-white text-sm md:text-lg lg:text-xl max-w-2xl">
+          <p className="text-sm md:text-lg lg:text-xl">
             No more chasing payments, waiting months for cash, or drowning in
             paperwork.
           </p>
-          <div className="max-w-2xl grid grid-cols-1 gap-y-1 md:grid-cols-3">
+          <div className="max-w-6xl grid grid-cols-1 gap-y-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-start">
             <div className="flex gap-2 items-center">
-              <img src="/checkmark-badge.svg" alt="check" />
-              <p className="text-white text-xs md:tex-base">
+              <img src="/checkmark-badge.svg" alt="check" className="min-w-6" />
+              <p className="text-sm md:text-base">
                 Automated contracts and invoicing – no more manual admin
               </p>
             </div>
             <div className="flex gap-2 items-center">
-              <img src="/checkmark-badge.svg" alt="check" />
-              <p className="text-white text-xs md:tex-base">
+              <img src="/checkmark-badge.svg" alt="check" className="min-w-6" />
+              <p className="text-sm md:text-base">
                 Track your brand deals and payments easily – full visibility in
                 one place
               </p>
             </div>
             <div className="flex gap-2 items-center">
-              <img src="/checkmark-badge.svg" alt="check" />
-              <p className="text-white text-xs md:tex-base">
+              <img src="/checkmark-badge.svg" alt="check" className="min-w-6" />
+              <p className="text-sm md:text-base">
                 Optional instant payouts once you deliver content – cash when
                 you need it
               </p>
             </div>
           </div>
           <button
-            onClick={() => router.push("/creator-waitlist")}
-            className="bg-custom-gradient text-white text-sm md:text-base py-3 px-8 w-fit rounded-full shadow-demoShadow transition mt-4"
+            onClick={() => router.push("/creators-signup-form")}
+            className="bg-custom-gradient text-white text-sm md:text-base py-2 px-4 md:py-3 md:px-8 w-fit self-center md:self-auto rounded-full shadow-demoShadow transition mt-4"
           >
             Sign up as a Creator
           </button>
