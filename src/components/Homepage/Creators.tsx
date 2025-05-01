@@ -8,7 +8,7 @@ function Creators() {
   const router = useRouter();
 
   return (
-    <div className="relative h-screen mb-3">
+    <div id="creators" className="relative h-screen mb-3">
       <Image
         src="/happy-group.jpg"
         alt="happy group"
@@ -24,10 +24,7 @@ function Creators() {
           // "linear-gradient(to bottom, transparent 40%, #1C1C1C90 50%, #1C1C1C 70%)",
         }}
       />
-      <div
-        id="creators"
-        className="absolute inset-x-0 -bottom-6 md:bottom-0 lg:bottom-3 text-black"
-      >
+      <div className="absolute inset-x-0 -bottom-6 md:bottom-0 lg:bottom-3 text-black">
         <div className="flex flex-col gap-4 md:gap-8 pb-12 px-4 md:px-12 lg:px-24">
           <h5 className="bg-[#8E22EA] py-0.5 px-2.5 uppercase rounded-2xl text-xs md:text-sm font-semibold text-[#FBF7FF] w-fit">
             For creators
@@ -43,27 +40,30 @@ function Creators() {
             <div className="flex gap-2 items-center">
               <img src="/checkmark-badge.svg" alt="check" className="min-w-6" />
               <p className="text-sm md:text-base">
-                Automated contracts and invoicing – no more manual admin
+                Automated contracts and invoicing –{" "}
+                <span className="font-medium">no more manual admin</span>
               </p>
             </div>
             <div className="flex gap-2 items-center">
               <img src="/checkmark-badge.svg" alt="check" className="min-w-6" />
               <p className="text-sm md:text-base">
-                Track your brand deals and payments easily – full visibility in
-                one place
+                Track your brand deals and payments easily –{" "}
+                <span className="font-medium">
+                  full visibility in one place
+                </span>
               </p>
             </div>
             <div className="flex gap-2 items-center">
               <img src="/checkmark-badge.svg" alt="check" className="min-w-6" />
               <p className="text-sm md:text-base">
-                Optional instant payouts once you deliver content – cash when
-                you need it
+                Optional instant payouts once you deliver content –{" "}
+                <span className="font-medium">cash when you need it</span>
               </p>
             </div>
           </div>
           <button
             onClick={() => router.push("/creators-signup-form")}
-            className="bg-custom-gradient text-white text-sm md:text-base py-2 px-4 md:py-3 md:px-8 w-fit self-center md:self-auto rounded-full shadow-demoShadow transition mt-4"
+            className="bg-custom-gradient text-white text-sm md:text-base py-2 px-4 md:py-3 md:px-8 w-fit self-center md:self-auto rounded-full shadow-demoShadow drop-shadow-[0_4px_19px_rgba(142,34,234,0.52)] transition mt-4"
           >
             Sign up as a Creator
           </button>

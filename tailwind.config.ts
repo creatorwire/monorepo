@@ -76,16 +76,16 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       dropShadow: {
-        custom: "0px 2px 4px rgba(0, 0, 0, 0.10)",
+        custom: "0px 2px 4px rgba(0, 0, 0,0)",
       },
       boxShadow: {
         custom:
           "`0px 61px 500px 0px rgba(20, 25, 32, 0.01),0px 6.514px 33.251px 0px rgba(20, 25, 32, 0.03), 0px 2.787px 13.836px 0px rgba(20, 25, 32, 0.07)`",
-        demoShadow: "inset 0 4px 1px 0 #FFFFFF66",
+        demoShadow: "inset 0px 4px 0px 0px #FFFFFF28",
       },
       backgroundImage: {
-        "custom-gradient": "linear-gradient(45deg, #8C06FF 40%, #8E22EA 60%);",
-        "demo-gradient": "linear-gradient(180deg, #8E22EA85 45%, #8E22EA 100%)",
+        "custom-gradient": "linear-gradient(45deg, #8E22EA 35%, #8C06FF 40%)",
+        "black-gradient": "linear-gradient(45deg, #BF73FF 0%, #8E22EA 60%)",
       },
      keyframes: {
         blob: {

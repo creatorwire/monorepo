@@ -5,10 +5,8 @@ const socialPlatforms = [
   "Instagram",
   "YouTube",
   "TikTok",
-  "Twitter",
-  "Facebook",
-  "LinkedIn",
-  "Other",
+  "(X) Twitter",
+  "Other (please specify)",
 ];
 const creatorTypeOptions = [
   "Social Media Influencer",
@@ -57,9 +55,22 @@ function BasicInfo({
     value: string
   ) => {
     setFormData((prev) => {
-      const accounts = prev.socialAccounts.map((acc, i) =>
-        i === idx ? { ...acc, [field]: value } : acc
-      );
+      const accounts = prev.socialAccounts.map((acc, i) => {
+        if (i === idx) {
+          const updatedAcc = { ...acc, [field]: value };
+
+          if (field === "platform" && value === "Other (please specify)") {
+            updatedAcc.customPlatform = "";
+          }
+
+          if (field === "platform" && value !== "Other (please specify)") {
+            updatedAcc.customPlatform = undefined;
+          }
+
+          return updatedAcc;
+        }
+        return acc;
+      });
       return { ...prev, socialAccounts: accounts };
     });
   };
@@ -75,7 +86,6 @@ function BasicInfo({
   const usedPlatforms = formData.socialAccounts
     .map((acc) => acc.platform)
     .filter((p) => p);
-
   return (
     <>
       <h5 className="text-[#121212] my-3 font-medium md:text-lg lg:text-lg">
@@ -161,44 +171,62 @@ function BasicInfo({
           </label>
           <div className="flex flex-col gap-4">
             {formData.socialAccounts.map((acc, idx) => {
+              const isOtherPlatform = acc.platform === "Other (please specify)";
               const availablePlatforms = socialPlatforms.filter(
-                (p) => p === acc.platform || !usedPlatforms.includes(p)
+                (p) =>
+                  p === acc.platform ||
+                  (p !== "Other (please specify)" &&
+                    !usedPlatforms.includes(p)) ||
+                  p === "Other (please specify)"
               );
 
               return (
                 <div key={idx} className="grid grid-cols-2 gap-4">
-                  {/* platform */}
                   <div className="w-full">
                     <h4 className="text-[#344054] text-sm font-medium mb-1">
                       Platform
                     </h4>
-                    <select
-                      name={`social-${idx}-platform`}
-                      value={acc.platform}
-                      onChange={(e) =>
-                        updateSocialAccount(idx, "platform", e.target.value)
-                      }
-                      className="flex-1 p-2 border border-gray-300 rounded-[8px] outline-none w-full"
-                    >
-                      <option disabled value="">
-                        Select Platform
-                      </option>
-                      {availablePlatforms.map((p) => (
-                        <option key={p} value={p}>
-                          {p}
+                    {isOtherPlatform ? (
+                      <input
+                        type="text"
+                        value={acc.customPlatform || ""}
+                        onChange={(e) =>
+                          updateSocialAccount(
+                            idx,
+                            "customPlatform",
+                            e.target.value
+                          )
+                        }
+                        placeholder="Specify platform"
+                        className="flex-1 p-2 border border-gray-300 rounded-[8px] outline-none w-full"
+                      />
+                    ) : (
+                      <select
+                        value={acc.platform}
+                        onChange={(e) =>
+                          updateSocialAccount(idx, "platform", e.target.value)
+                        }
+                        className="flex-1 p-2 border border-gray-300 rounded-[8px] outline-none w-full"
+                      >
+                        <option disabled value="">
+                          Select Platform
                         </option>
-                      ))}
-                    </select>
+                        {availablePlatforms.map((p) => (
+                          <option key={p} value={p}>
+                            {p}
+                          </option>
+                        ))}
+                      </select>
+                    )}
                   </div>
 
-                  {/* handle */}
+                  {/* Handle input remains the same */}
                   <div>
                     <h4 className="text-[#344054] text-sm font-medium mb-1">
                       Handle
                     </h4>
                     <input
                       type="text"
-                      name={`social-${idx}-handle`}
                       value={acc.handle}
                       onChange={(e) =>
                         updateSocialAccount(idx, "handle", e.target.value)

@@ -1,17 +1,18 @@
 "use client";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import greenCheck from "../../../public/green-check.svg";
 import Link from "next/link";
 import BasicInfo from "./BasicInfo";
 import ProductInterest from "./ProductInterest";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import axios from "axios";
 import toast from "react-hot-toast";
 
 export interface SocialAccount {
   platform: string;
   handle: string;
+  customPlatform?: string;
 }
 
 export interface FormData {
@@ -31,6 +32,18 @@ export interface FormData {
 function Waitlist() {
   const [currentStep, setCurrentStep] = useState(0);
   const steps = ["Basic Information", "Product Interest"];
+  const pathname = usePathname();
+  const [selectedType, setSelectedType] = useState("brand");
+
+  useEffect(() => {
+    if (pathname.includes("/brands-signup-form")) {
+      setSelectedType("/brands-signup-form");
+    } else if (pathname.includes("/agency-signup-form")) {
+      setSelectedType("/agency-signup-form");
+    } else if (pathname.includes("/creators-signup-form")) {
+      setSelectedType("/creators-signup-form");
+    }
+  }, [pathname]);
 
   const [finalFormData, setFinalFormData] = useState<{
     agencyName: string;
@@ -92,6 +105,10 @@ function Waitlist() {
     }
 
     const { otherAgencyText, otherPaymentText, ...rest } = formData;
+    const processedSocialAccounts = formData.socialAccounts.map((acc) => ({
+      handle: acc.handle,
+      platform: acc.customPlatform || acc.platform,
+    }));
     const payload = {
       ...rest,
       agencyTypes: filteredTypes,
@@ -105,7 +122,7 @@ function Waitlist() {
       phoneNumber: `${payload.countryCode}${payload.phoneNumber}`,
       numberOfCreators: Number(payload.numberOfCreators),
       howTheyPayCreators: payload.paymentMethods,
-      socialMediaAccounts: payload.socialAccounts,
+      socialMediaAccounts: processedSocialAccounts,
       productInterest: [],
     });
     setCurrentStep(1);
@@ -175,16 +192,18 @@ function Waitlist() {
 
       {showSuccess ? (
         <div className="h-screen w-full max-w-xl mx-auto flex-col flex items-center justify-center p-2 md:p-4 gap-4">
-          <img
-            src="/logo.svg"
-            alt=""
-            className="w-[165px] py-5 hidden md:block"
-          />
-          <img
-            src="/small-logo.png"
-            alt="creatorwire"
-            className="md:hidden w-[10rem]"
-          />
+          <Link href="/">
+            <img
+              src="/logo.svg"
+              alt=""
+              className="w-[165px] py-5 hidden md:block"
+            />
+            <img
+              src="/small-logo.png"
+              alt="creatorwire"
+              className="md:hidden w-[10rem]"
+            />
+          </Link>
           <div className="flex items-center gap-0.5 md:gap-3 w-full">
             {steps.map((step, index) => (
               <div key={step} className="flex-1 flex flex-col items-center">
@@ -224,24 +243,39 @@ function Waitlist() {
           </p>
           <button
             onClick={() => router.push("/")}
-            className="bg-custom-gradient text-white text-sm md:text-base py-3 px-8 rounded-full shadow-demoShadow transition mt-4"
+            className="bg-custom-gradient text-white text-sm md:text-base py-3 px-8 rounded-full shadow-demoShadow drop-shadow-[0_4px_19px_rgba(142,34,234,0.52)] transition mt-4"
           >
             Go back to homepage
           </button>
         </div>
       ) : (
         <div className="w-full max-h-screen overflow-auto scrollbar-hide">
-          <div className="max-w-xl mx-auto flex">
-            <img
-              src="/logo.svg"
-              alt=""
-              className="w-[165px] py-5 hidden md:block"
-            />
-            <img
-              src="/small-logo.png"
-              alt="creatorwire"
-              className="md:hidden w-[10rem]"
-            />
+          <div className="max-w-xl mx-auto flex justify-between items-center w-full px-4">
+            <Link href="/">
+              <img
+                src="/logo.svg"
+                alt=""
+                className="w-[165px] py-5 hidden md:block"
+              />
+              <img
+                src="/small-logo.png"
+                alt="creatorwire"
+                className="md:hidden w-[10rem]"
+              />
+            </Link>
+
+            <div className="flex items-center gap-2">
+              <span className="text-[#808080] text-sm">Sign up as</span>
+              <select
+                value={selectedType}
+                onChange={(e) => router.push(e.target.value)}
+                className="text-purple-700 px-3 py-1 text-sm appearance-none bg-transparent border-none focus:outline-none focus:ring-0 active:outline-none active:ring-0 pr-8 -ml-4"
+              >
+                <option value="/brands-signup-form">Brand</option>
+                <option value="/agency-signup-form">Agency</option>
+                <option value="/creators-signup-form">Creator</option>
+              </select>
+            </div>
           </div>
           <hr />
           <div className="max-w-xl w-full p-2 md:p-4 mx-auto">
@@ -303,7 +337,7 @@ function Waitlist() {
                 <span className="w-full max-w-xl mx-auto flex justify-end p-4">
                   <button
                     onClick={handleBasicNext}
-                    className="bg-custom-gradient text-white text-xs md:text-sm py-3 px-16 rounded-full shadow-demoShadow transition"
+                    className="bg-custom-gradient text-white text-xs md:text-sm py-3 px-16 rounded-full shadow-demoShadow drop-shadow-[0_4px_19px_rgba(142,34,234,0.52)] transition"
                   >
                     Next
                   </button>

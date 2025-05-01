@@ -18,7 +18,7 @@ export default function Hero() {
 
         <div className="max-w-screen-2xl mx-auto h-full w-full flex flex-col items-center justify-center relative">
           {/* Content */}
-          <div className="relative z-10 text-center px-4 max-w-2xl w-full flex flex-col justify-between items-center max-h-[600px] md:max-h-[650px] h-full py-12 md:mb-12">
+          <div className="relative z-10 text-center px-4 max-w-2xl w-full flex flex-col gap-8 justify-between items-center max-h-[600px] md:max-h-[700px] py-8 md:mb-12 md:-mt-20">
             <img
               src="/logo.svg"
               alt="creatorwire"
@@ -30,11 +30,11 @@ export default function Hero() {
               className="mx-auto md:hidden w-[12rem]"
             />
             <div className="w-full text-center">
-              <h1 className="text-[#121212] font-poppins font-extrabold text-3xl md:text-4xl lg:text-6xl uppercase tracking-tighter">
+              <h1 className="text-[#121212] font-poppins font-extrabold text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-tight uppercase tracking-tighter">
                 Getting creators paid early or on time, every time — with zero
                 admin stress
               </h1>
-              <p className="mt-4 font-medium text-[#626262] md:text-lg lg:text-xl">
+              <p className="font-medium text-[#626262] md:text-lg lg:text-xl">
                 Fast, reliable payments for content creators, creative
                 entrepreneurs and freelancers, with full visibility and simple
                 tracking for brands and agencies.
@@ -42,14 +42,14 @@ export default function Hero() {
             </div>
             <button
               onClick={() => window.scrollTo(0, window.innerHeight)}
-              className="bg-custom-gradient text-white text-sm md:text-base py-3 px-8 w-fit rounded-full shadow-demoShadow transition"
+              className="bg-custom-gradient text-white text-sm md:text-base py-3 px-8 w-fit rounded-full shadow-demoShadow drop-shadow-[0_4px_19px_rgba(142,34,234,0.52)] transition"
             >
               Get Started
             </button>
           </div>
 
           {/* Bottom nav pill */}
-          <div className="absolute bottom-2 md:bottom-[5%] left-1/2 transform -translate-x-1/2 bg-white rounded-xl shadow-gray-400 shadow-md py-2 px-6 hidden md:flex items-center justify-between min-w-[35%] gap-4">
+          <div className="absolute bottom-2 xl:bottom-[5%] left-1/2 transform -translate-x-1/2 bg-white rounded-xl shadow-gray-400 shadow-md py-2 px-6 hidden md:flex items-center justify-between min-w-[35%] gap-4">
             <Link href="/">
               <img src="/logoIcon.svg" alt="" />
             </Link>

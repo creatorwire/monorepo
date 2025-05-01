@@ -37,10 +37,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Toaster />
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${poppins.className} ${inter.className}`}
       >
+        <Toaster />
         {children}
       </body>
     </html>

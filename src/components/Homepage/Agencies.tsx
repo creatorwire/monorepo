@@ -7,10 +7,22 @@ import React from "react";
 
 function Agencies() {
   const points = [
-    "Clean, error-free, exportable data  and simplify client reporting",
-    "Accelerate campaign execution and deliver results on time, every time",
-    "Track deliverables, approvals and payments in one dashboard  –  full visibility",
-    "Automate creator payouts and eliminate cashflow strain and manual admin",
+    {
+      title: "simplify client reporting",
+      caption: "Clean, error-free, exportable data",
+    },
+    {
+      title: "full visibility",
+      caption: "Track deliverables, approvals and payments in one dashboard",
+    },
+    {
+      title: "deliver results on time, every time",
+      caption: "Accelerate campaign execution",
+    },
+    {
+      title: "eliminate cashflow strain and manual admin",
+      caption: "Automate creator payouts",
+    },
   ];
   const router = useRouter();
 
@@ -18,13 +30,13 @@ function Agencies() {
     <div className="max-w-screen-2xl mx-auto w-full p-4 relative">
       <h5
         id="agencies"
-        className="bg-[#8E22EA] py-0.5 px-2.5 uppercase rounded-2xl text-xs md:text-sm font-semibold text-[#FBF7FF] w-fit absolute md:hidden top-6"
+        className="bg-[#8E22EA] py-0.5 px-2.5 uppercase rounded-2xl text-xs md:text-sm font-semibold text-[#FBF7FF] w-fit absolute xl:hidden top-6"
       >
         For Agencies
       </h5>
-      <div className="max-w-screen-xl w-full mx-auto flex flex-col-reverse md:flex-row items-center gap-4 md:gap-12 my-12 md:my-24">
+      <div className="max-w-screen-xl w-full mx-auto flex flex-col-reverse xl:flex-row items-center gap-4 md:gap-12 my-12 md:my-24">
         {/* TEXT COLUMN */}
-        <div className="flex-1 flex flex-col gap-3 md:gap-4 items-start text-left pl-2">
+        <div className="flex-1 flex flex-col gap-3 xl:gap-4 items-start text-left pl-2">
           <h5
             id="agencies"
             className="bg-[#8E22EA] py-0.5 px-2.5 uppercase rounded-2xl text-xs md:text-sm font-semibold text-[#FBF7FF] w-fit hidden md:block"
@@ -47,14 +59,21 @@ function Agencies() {
                   alt="check"
                   className="min-w-6 "
                 />
-                <p className="text-[#121212] text-xs md:text-sm">{point}</p>
+                <p>
+                  <span className="text-sm md:text-base">
+                    {point.caption} –{" "}
+                  </span>
+                  <span className="text-sm md:text-base font-semibold">
+                    {point.title}
+                  </span>
+                </p>
               </div>
             ))}
           </div>
 
           <button
             onClick={() => router.push("/agency-signup-form")}
-            className="bg-custom-gradient text-white text-sm md:text-base py-2 px-4 md:py-3 md:px-8 w-fit self-center md:self-auto rounded-full shadow-demoShadow transition mt-4"
+            className="bg-custom-gradient text-white text-sm md:text-base py-2 px-4 md:py-3 md:px-8 w-fit self-center md:self-auto rounded-full shadow-demoShadow drop-shadow-[0_4px_19px_rgba(142,34,234,0.52)] transition mt-4"
           >
             Sign up as an Agency
           </button>

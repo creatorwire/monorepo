@@ -6,21 +6,21 @@ import { useRouter } from "next/navigation";
 function Brands() {
   const points = [
     {
-      title: "One payment for all your creators",
-      caption: "we handle individual payouts for you",
+      title: "one payment for all your creators",
+      caption: "We handle individual payouts for you",
     },
     {
-      title: "Fewer errors, faster campaigns",
+      title: "fewer errors, faster campaigns",
       caption: "Reduce operational costs and time",
     },
     {
-      title:
+      title: "full visibility",
+      caption:
         "Real-time tracking of deliverables, payment statuses, and budgets",
-      caption: "full visibility",
     },
     {
-      title: "Automated invoicing and clean financial reporting",
-      caption: "stay compliant and efficient",
+      title: "stay compliant and efficient easily",
+      caption: "Automated invoicing and clean financial reporting",
     },
   ];
   const router = useRouter();
@@ -77,20 +77,20 @@ function Brands() {
                 alt="checkmark"
                 className="min-w-6 mt-1"
               />
-              <div>
-                <h5 className="text-white font-medium text-sm md:text-base">
+              <p>
+                <span className="text-white text-sm md:text-base">
+                  {point.caption} –{" "}
+                </span>
+                <span className="text-sm md:text-base font-semibold text-white">
                   {point.title}
-                </h5>
-                <p className="text-sm md:text-base text-white">
-                  {point.caption}
-                </p>
-              </div>
+                </span>
+              </p>
             </div>
           ))}
         </div>
         <button
           onClick={() => router.push("/brands-signup-form")}
-          className="bg-custom-gradient text-white text-sm md:text-base py-2 px-4 md:py-3 md:px-8 w-fit rounded-full shadow-demoShadow transition mt-12"
+          className="bg-black-gradient text-white text-sm md:text-base py-2 px-4 md:py-3 md:px-8 w-fit rounded-full shadow-[inset_0_4px_1px_rgba(255,255,255,0.28)] drop-shadow-[0_4px_19px_rgba(142,34,234,0.52)]  transition mt-12"
         >
           Sign up as a Brand
         </button>
