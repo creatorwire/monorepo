@@ -1,15 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import React from "react";
 
 export default function Hero() {
-  const router = useRouter();
-
   return (
     <div className="px-2 md:px-4 py-2 md:py-4 bg-white h-screen">
-      <div className="relative bg-gray-400 bg-opacity-20 backdrop-blur-lg flex max-h-[98vh] h-full items-center justify-center rounded-2xl overflow-hidden">
+      <div className="relative bg-gray-400 bg-opacity-20 backdrop-blur-lg flex min-h-screen h-full items-center justify-center rounded-2xl overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-10 left-0 w-[40vw] aspect-square bg-purple-400 rounded-full filter blur-3xl opacity-70 animate-blob"></div>
           <div className="absolute top-1/2 right-0 w-[45vw] aspect-square bg-pink-400 rounded-full filter blur-3xl opacity-60 animate-blob2"></div>
@@ -18,7 +15,7 @@ export default function Hero() {
 
         <div className="max-w-screen-2xl mx-auto h-full w-full flex flex-col items-center justify-center relative">
           {/* Content */}
-          <div className="relative z-10 text-center px-4 max-w-2xl w-full flex flex-col gap-8 justify-between items-center max-h-[600px] md:max-h-[700px] py-8 md:mb-12 md:-mt-20">
+          <div className="relative z-10 text-center px-4 max-w-2xl w-full flex flex-col gap-8 justify-between items-center max-h-[600px] md:min-h-[700px] py-8 md:mb-12 md:-mt-20">
             <img
               src="/logo.svg"
               alt="creatorwire"
