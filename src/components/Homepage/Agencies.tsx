@@ -108,18 +108,27 @@ function Agencies() {
         >
           Contact us
         </Link>
-        <Link
-          href="#"
+        <a
+          href="https://app.termly.io/policy-viewer/policy.html?policyUUID=6ecbffea-d315-402a-809c-56fa640fb848"
+          target="_blank"
           className="text-[#808080] text-xs md:text-sm hover:text-[#121212] uppercase"
         >
           Privacy policy
-        </Link>
-        <Link
-          href="#"
+        </a>
+        <a
+          href="https://app.termly.io/policy-viewer/policy.html?policyUUID=c11e57d1-470a-4cfb-b3aa-992331a0d353"
+          target="_blank"
+          className="text-[#808080] text-xs md:text-sm hover:text-[#121212] uppercase"
+        >
+          Cookie policy
+        </a>
+        <a
+          href="https://app.termly.io/policy-viewer/policy.html?policyUUID=30bce7f4-ebcd-43be-843f-cc5d435a1aea"
+          target="_blank"
           className="text-[#808080] text-xs md:text-sm hover:text-[#121212] uppercase"
         >
           Terms and conditions
-        </Link>
+        </a>
         <div className="flex items-center gap-3">
           <p className="text-[#808080] text-xs md:text-sm hover:text-[#121212] uppercase">
             Social Media
