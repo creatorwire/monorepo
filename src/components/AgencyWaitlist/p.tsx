@@ -243,7 +243,7 @@ function Waitlist() {
           </p>
           <button
             onClick={() => router.push("/")}
-            className="bg-custom-gradient text-white text-sm md:text-base py-3 px-8 rounded-full shadow-demoShadow drop-shadow-[0_4px_19px_rgba(142,34,234,0.52)] transition mt-4"
+            className="bg-custom-gradient text-white text-sm md:text-base py-3 px-8 rounded-full shadow-demoShadow drop-shadow-[1px_2px_19px_rgba(142,34,234,0.52)] transition mt-4"
           >
             Go back to homepage
           </button>
@@ -337,7 +337,7 @@ function Waitlist() {
                 <span className="w-full max-w-xl mx-auto flex justify-end p-4">
                   <button
                     onClick={handleBasicNext}
-                    className="bg-custom-gradient text-white text-xs md:text-sm py-3 px-16 rounded-full shadow-demoShadow drop-shadow-[0_4px_19px_rgba(142,34,234,0.52)] transition"
+                    className="bg-custom-gradient text-white text-xs md:text-sm py-3 px-16 rounded-full shadow-demoShadow drop-shadow-[1px_2px_19px_rgba(142,34,234,0.52)] transition"
                   >
                     Next
                   </button>

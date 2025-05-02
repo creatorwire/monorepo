@@ -352,7 +352,7 @@ function Waitlist() {
                   </button>
                   <button
                     onClick={handleSubmit}
-                    className="bg-custom-gradient text-white text-xs md:text-sm py-3 px-16 rounded-full shadow-demoShadow drop-shadow-[0_4px_19px_rgba(142,34,234,0.52)] transition"
+                    className="bg-custom-gradient text-white text-xs md:text-sm py-3 px-16 rounded-full shadow-demoShadow drop-shadow-[1px_2px_19px_rgba(142,34,234,0.52)] transition"
                   >
                     Next
                   </button>

@@ -39,19 +39,19 @@ function Agencies() {
         <div className="flex-1 flex flex-col gap-3 xl:gap-4 items-start text-left pl-2">
           <h5
             id="agencies"
-            className="bg-[#8E22EA] py-0.5 px-2.5 uppercase rounded-2xl text-xs md:text-sm font-semibold text-[#FBF7FF] w-fit hidden md:block"
+            className="bg-[#8E22EA] py-0.5 px-2.5 uppercase rounded-2xl text-xs md:text-sm font-semibold text-[#FBF7FF] w-fit hidden xl:block"
           >
             For Agencies
           </h5>
           <h3 className="text-xl md:text-2xl lg:text-3xl text-[#121212] max-w-xl mt-2">
             Track deliverables, manage budgets, and pay creators easily
           </h3>
-          <p className="text-[#121212] text-[13px] md:text-lg lg:text-xl max-w-2xl">
+          <p className="text-[#121212] text-[13px] md:text-lg lg:text-xl">
             No more chasing for deliverables, floating payments, or manually
             gathering data for client reports
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-4 md:gap-y-8 max-w-xl w-full my-2">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4 md:gap-y-8 max-w-2xl w-full my-2">
             {points.map((point, index) => (
               <div key={index} className="flex gap-2 items-center">
                 <img
@@ -73,14 +73,14 @@ function Agencies() {
 
           <button
             onClick={() => router.push("/agency-signup-form")}
-            className="bg-custom-gradient text-white text-sm md:text-base py-2 px-4 md:py-3 md:px-8 w-fit self-center md:self-auto rounded-full shadow-demoShadow drop-shadow-[0_4px_19px_rgba(142,34,234,0.52)] transition mt-4"
+            className="bg-custom-gradient text-white text-sm md:text-base py-2 px-4 md:py-3 md:px-8 w-fit self-center md:self-auto rounded-full shadow-demoShadow drop-shadow-[1px_2px_19px_rgba(142,34,234,0.52)] transition mt-4"
           >
             Sign up as an Agency
           </button>
         </div>
 
         {/* IMAGE COLUMN */}
-        <div className="max-w-xl">
+        <div className="max-w-lg">
           <Image
             src="/agency-card.svg"
             alt=""

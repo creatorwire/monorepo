@@ -112,6 +112,9 @@ export default {
         blob2: "blob2 30s infinite cubic-bezier(0.4, 0, 0.2, 1)",
         blob3: "blob3 35s infinite cubic-bezier(0.4, 0, 0.2, 1)",
       },
+      screens: {
+        "2xl": "1400px",
+      },
     },
   },
   // eslint-disable-next-line @typescript-eslint/no-require-imports

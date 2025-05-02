@@ -44,7 +44,7 @@ function PhoneInput({
           autoComplete="off"
           onChange={handleCountryCodeChange}
           value={formDetails.countryCode || ""}
-          placeholder="+1"
+          placeholder="+44"
           className="p-2 border-0 border-none bg-white focus-within:ring-0 focus-within:bg-transparent outline-none w-24"
         />
         <datalist id="countryCodes">

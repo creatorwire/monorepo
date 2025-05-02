@@ -15,7 +15,7 @@ export default function Hero() {
 
         <div className="max-w-screen-2xl mx-auto h-full w-full flex flex-col items-center justify-center relative">
           {/* Content */}
-          <div className="relative z-10 text-center px-4 max-w-2xl w-full flex flex-col gap-4 items-center max-h-[600px] overflow-auto scrollbar-hide py-8 md:mb-12 md:-mt-12">
+          <div className="relative z-10 text-center px-4 max-w-2xl w-full flex flex-col gap-8 2xl:gap-12 items-center max-h-[600px] 2xl:max-h-full overflow-auto scrollbar-hide py-8 md:mb-12 md:-mt-12">
             <img
               src="/logo.svg"
               alt="creatorwire"
@@ -24,14 +24,14 @@ export default function Hero() {
             <img
               src="/small-logo.png"
               alt="creatorwire"
-              className="mx-auto md:hidden w-[12rem]"
+              className="mx-auto md:hidden w-[12rem] -my-12"
             />
             <div className="w-full text-center">
-              <h1 className="text-[#121212] font-poppins font-extrabold text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-tight uppercase tracking-tighter">
+              <h1 className="text-[#121212] font-poppins font-extrabold text-3xl md:text-4xl 2xl:text-6xl leading-tight uppercase tracking-tighter">
                 Getting creators paid early or on time, every time — with zero
                 admin stress
               </h1>
-              <p className="font-medium text-[#626262] md:text-lg lg:text-xl">
+              <p className="font-medium text-[#626262] md:text-lg lg:text-xl mt-4">
                 Fast, reliable payments for content creators, creative
                 entrepreneurs and freelancers, with full visibility and simple
                 tracking for brands and agencies.
@@ -39,7 +39,7 @@ export default function Hero() {
             </div>
             <button
               onClick={() => window.scrollTo(0, window.innerHeight)}
-              className="bg-custom-gradient text-white text-sm md:text-base py-3 px-8 w-fit rounded-full shadow-demoShadow drop-shadow-[0_4px_19px_rgba(142,34,234,0.52)] transition"
+              className="bg-custom-gradient text-white text-sm md:text-base py-3 px-8 w-fit rounded-full shadow-demoShadow drop-shadow-[1px_2px_19px_rgba(142,34,234,0.52)] transition"
             >
               Get Started
             </button>
