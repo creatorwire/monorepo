@@ -15,7 +15,7 @@ export default function Hero() {
 
         <div className="max-w-screen-2xl mx-auto h-full w-full flex flex-col items-center justify-center relative">
           {/* Content */}
-          <div className="relative z-10 text-center px-4 max-w-2xl w-full flex flex-col gap-8 justify-between items-center max-h-[600px] md:min-h-[700px] py-8 md:mb-12 md:-mt-20">
+          <div className="relative z-10 text-center px-4 max-w-2xl w-full flex flex-col gap-8 items-center max-h-[600px] md:min-h-[700px] py-8 md:mb-12 md:-mt-12">
             <img
               src="/logo.svg"
               alt="creatorwire"
@@ -27,11 +27,11 @@ export default function Hero() {
               className="mx-auto md:hidden w-[12rem]"
             />
             <div className="w-full text-center">
-              <h1 className="text-[#121212] font-poppins font-extrabold text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-tight uppercase tracking-tighter">
+              <h1 className="text-[#121212] font-poppins font-extrabold text-3xl md:text-4xl lg:text-6xl leading-tight uppercase tracking-tighter">
                 Getting creators paid early or on time, every time — with zero
                 admin stress
               </h1>
-              <p className="font-medium text-[#626262] md:text-lg lg:text-xl">
+              <p className="font-medium text-[#626262] md:text-lg lg:text-xl mt-4">
                 Fast, reliable payments for content creators, creative
                 entrepreneurs and freelancers, with full visibility and simple
                 tracking for brands and agencies.
