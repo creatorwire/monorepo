@@ -2,9 +2,17 @@
 import React, { useState, useEffect } from "react";
 
 const productInterestOptions = [
-  "Simplified creator payments (no payroll admin, consolidated invoices)",
-  "Offer creators & agencies flexible payouts (payment fronted by CreatorWire)",
-  "Budget tracking, tax and financial reporting tools",
+  "Pay all creators with one invoice (we handle the split payouts)",
+  "Let creators get paid instantly (we front the funds)",
+  "Track payment status for every creator in real time",
+  "Track deliverables and deadlines across all campaigns",
+  "View all creator activity in one dashboard",
+  "Monitor campaign budgets and remaining spend",
+  "Get automatic reminders for deadlines and deliverables",
+  "Receive one consolidated invoice for all creators",
+  "Download clean, finance-ready tax and payment reports",
+  "Auto-match creator invoices to payments and campaigns",
+  "Reduce manual admin across legal, ops, and finance",
   "Other (please specify)",
 ];
 

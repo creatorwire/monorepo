@@ -2,9 +2,11 @@
 import React, { useState, useEffect } from "react";
 
 const productInterestOptions = [
-  "Interested in early payment",
-  "Interested in invoice automation",
-  "Interested in tracking my workflows",
+  "Instant payments for my brand deals",
+  "Invoice automation",
+  "Contract automation",
+  "Workflow tracking",
+  "Payments tracked and followed up by us",
   "Other (please specify)",
 ];
 

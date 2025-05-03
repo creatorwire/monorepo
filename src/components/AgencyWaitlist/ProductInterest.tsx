@@ -2,9 +2,12 @@
 import React, { useState, useEffect } from "react";
 
 const productInterestOptions = [
-  "Upfront cash to pay creators for verified work",
-  "Centralised tracking for campaign execution",
-  "Payroll, admin, tax, and reporting tools",
+  "Upfront payments to creators for approved work",
+  "Track deliverables, approvals, and payments in one dashboard",
+  "Accelerate campaign execution with centralised task tracking",
+  "Export clean data for client reporting and finance teams",
+  "Automate creator payouts (no manual admin or cashflow strain)",
+  "Reduce errors in payroll, tax, and invoicing",
   "Other (please specify)",
 ];
 

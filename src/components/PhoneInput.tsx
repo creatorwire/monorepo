@@ -43,13 +43,12 @@ function PhoneInput({
           list="countryCodes"
           autoComplete="off"
           onChange={handleCountryCodeChange}
-          value={formDetails.countryCode || ""}
           placeholder="+44"
           className="p-2 border-0 border-none bg-white focus-within:ring-0 focus-within:bg-transparent outline-none w-24"
         />
         <datalist id="countryCodes">
-          <option value="+1">+1</option>
           <option value="+44">+44</option>
+          <option value="+1">+1</option>
           <option value="+61">+61</option>
           <option value="+234">+234</option>
           <option value="+81">+81</option>

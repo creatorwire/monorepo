@@ -28,9 +28,9 @@ export interface FormData {
 function Waitlist() {
   const [currentStep, setCurrentStep] = useState(0);
   const steps = [
-    "Basic Information",
-    "Product Interest",
-    "Independent Earnings",
+    "About You",
+    "What You’re Looking For",
+    "Where You’re At Today",
   ];
   const pathname = usePathname();
   const [selectedType, setSelectedType] = useState("brand");
