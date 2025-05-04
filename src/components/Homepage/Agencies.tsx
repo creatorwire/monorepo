@@ -94,7 +94,7 @@ function Agencies() {
           </div>
         </div>
       </div>
-      <div className="bg-white py-3">
+      <div className="bg-white p-4">
         <div className="max-w-screen-2xl mx-auto w-full flex flex-col md:flex-row justify-between md:items-center gap-4">
           <img
             src="/logo.svg"
