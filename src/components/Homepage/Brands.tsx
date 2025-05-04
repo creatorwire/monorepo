@@ -59,11 +59,18 @@ function Brands() {
             className="w-[11rem] md:w-1/3 md:h-full hover:scale-105 transition-all duration-300 hover:z-10 z-5 md:z-0"
           />
           <Image
+            src="/campaign.png"
+            alt=""
+            width={150}
+            height={150}
+            className="w-[11rem] md:w-1/3 md:h-full hover:scale-105 transition-all duration-300 md:hidden hover:z-10 rotate-[15deg] mt-10 scale-95"
+          />
+          <Image
             src="/campaign.svg"
             alt=""
             width={0}
             height={0}
-            className="w-[11rem] md:w-1/3 md:h-full hover:scale-105 transition-all duration-300 hover:z-10 rotate-[15deg] mt-10 scale-95"
+            className="w-full md:w-1/3 md:h-full hover:scale-105 transition-all hidden md:block duration-300 hover:z-10 rotate-[15deg] mt-10 scale-95"
           />
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-3 max-w-2xl mx-auto">
