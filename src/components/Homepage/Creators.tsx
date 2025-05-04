@@ -8,17 +8,24 @@ function Creators() {
   const router = useRouter();
 
   return (
-    <div id="creators" className="relative h-screen">
+    <div id="creators" className="relative h-[980px] md:h-screen">
+      <Image
+        src="/creators.svg"
+        alt="happy group"
+        fill
+        className="object-cover h-full md:hidden"
+        priority
+      />
       <Image
         src="/creators.jpg"
         alt="happy group"
         fill
-        className="object-cover object-center h-full"
+        className="object-cover object-bottom h-full hidden md:block"
         priority
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#1C1C1C90] to-[#1C1C1C] sm:from-[20%] sm:via-[40%] sm:to-[70%] md:from-[60%] md:via-[65%] md:to-[70%]" />
-      <div className="absolute inset-x-0 -bottom-6 md:bottom-0 lg:bottom-3 text-white">
-        <div className="flex flex-col gap-4 md:gap-8 pb-12 px-4 md:px-12 lg:px-24">
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#1C1C1C90] to-[#1C1C1C] from-[48%] via-[52%] to-[68%]" />
+      <div className="absolute inset-x-0 -bottom-6 md:bottom-0 lg:bottom-0 2xl:bottom-[5%] text-white">
+        <div className="flex flex-col gap-4 md:gap-8 pb-12 md:pb-0 px-4 md:px-12 lg:px-24">
           <h5 className="bg-[#8E22EA] py-0.5 px-2.5 uppercase rounded-2xl text-xs md:text-sm font-semibold text-[#FBF7FF] w-fit">
             For creators
           </h5>

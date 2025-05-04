@@ -26,7 +26,7 @@ function Brands() {
   const router = useRouter();
 
   return (
-    <div className="bg-[#1C1C1C] py-12 px-4">
+    <div className="bg-[#1C1C1C] pt-32 py-12 px-4">
       <div className="flex flex-col gap-4 w-full items-center">
         <h5
           id="brands"
