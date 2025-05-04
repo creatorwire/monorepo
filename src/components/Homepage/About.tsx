@@ -68,7 +68,7 @@ function About() {
           className="hidden xl:block absolute right-0 bottom-0"
           delay={200}
         >
-          <img src="/techware.svg" alt="" />
+          <img src="/techware.png" alt="" className="max-w-md" />
         </SlideInFromBottom>
 
         <SlideInFromBottom

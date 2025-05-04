@@ -8,23 +8,16 @@ function Creators() {
   const router = useRouter();
 
   return (
-    <div id="creators" className="relative h-screen mb-3">
+    <div id="creators" className="relative h-screen">
       <Image
-        src="/happy-group.jpg"
+        src="/creators.jpg"
         alt="happy group"
         fill
         className="object-cover object-center h-full"
         priority
       />
-      <div
-        className="absolute inset-0"
-        style={{
-          background:
-            "linear-gradient(to bottom, transparent 30%, #F5F5F550 40%, #F5F5F5 76%)",
-          // "linear-gradient(to bottom, transparent 40%, #1C1C1C90 50%, #1C1C1C 70%)",
-        }}
-      />
-      <div className="absolute inset-x-0 -bottom-6 md:bottom-0 lg:bottom-3 text-black">
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#1C1C1C90] to-[#1C1C1C] sm:from-[20%] sm:via-[40%] sm:to-[70%] md:from-[60%] md:via-[65%] md:to-[70%]" />
+      <div className="absolute inset-x-0 -bottom-6 md:bottom-0 lg:bottom-3 text-white">
         <div className="flex flex-col gap-4 md:gap-8 pb-12 px-4 md:px-12 lg:px-24">
           <h5 className="bg-[#8E22EA] py-0.5 px-2.5 uppercase rounded-2xl text-xs md:text-sm font-semibold text-[#FBF7FF] w-fit">
             For creators
