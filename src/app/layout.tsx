@@ -27,7 +27,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "CreatorWire",
-  description: "The all-in-one platform for creators, brands and agencies.",
+  description: "Seamless payments for creators, brands and agencies",
 };
 
 export default function RootLayout({

@@ -104,7 +104,7 @@ function Agencies() {
           <img
             src="/small-logo.png"
             alt="creatorwire"
-            className="md:hidden w-[8rem]"
+            className="md:hidden w-[8rem] -ml-2.5"
           />
           <Link
             href="mailto:hello@creatorwire.com"

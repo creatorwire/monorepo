@@ -10,7 +10,7 @@ function Creators() {
   return (
     <div id="creators" className="relative h-[980px] md:h-screen">
       <Image
-        src="/creators.svg"
+        src="/creators.png"
         alt="happy group"
         fill
         className="object-cover h-full md:hidden"
